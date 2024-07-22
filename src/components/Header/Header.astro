@@ -1,0 +1,45 @@
+---
+import Logo from "../Logo.astro";
+import LinkButtons from "./LinkButtons.astro";
+import ContactButton from "./ContactButton.astro";
+
+const links = [
+  { text: "Nosotros", href: "/nosotros" },
+  { text: "Servicios", href: "/servicios" },
+  { text: "Clientes", href: "/clientes" },
+  { text: "Blog", href: "/blog" },
+];
+---
+
+<header class="w-full">
+  <div class="container flex justify-between">
+    <a href="/" class="flex items-center gap-x-4 text-xl font-bold">
+      <Logo />
+      TECSOUND
+    </a>
+    <ul class="flex gap-20">
+      <LinkButtons links={links} />
+    </ul>
+    <div>
+      <ContactButton />
+    </div>
+  </div>
+</header>
+<style>
+  header {
+    color: black;
+    padding: 1rem;
+    text-align: center;
+
+    /* sticky header */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+</style>

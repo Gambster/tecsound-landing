@@ -1,0 +1,56 @@
+<section class="full-width relative parallax-section">
+  <div class="sect1-bg h-full">
+    <div class="absolute w-full h-full bg-black opacity-30"></div>
+    <div class="w-100 h-full content grid grid-cols-12">
+      <div class="flex justify-center flex-col h-full z-50 col-span-5">
+        <h3 class="text-3xl text-white">Expertos en</h3>
+        <h1 class="text-6xl text-white font-bold">
+          Acústica y <br />Contro de Ruido
+        </h1>
+        <p class="text-white font-light text-sm mt-4 leading-6">
+          Cada uno de nuestros servicios busca lograr las condiciones adecuadas
+          y el confort acústico para que desempeñes de forma óptima tus tareas y
+          se realicen tus proyectos de forma adecuada.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    background-color: black;
+    height: 640px;
+  }
+  .content {
+    max-width: 1200px;
+    padding: 1rem;
+    /* padding-left: 12vw; */
+    margin: 0 auto;
+  }
+  .sect1-bg {
+    background-image: url("/backgorund-1-section1.jpeg");
+    background-color: transparent;
+
+    background-size: 130%; /* Esto hace el zoom */
+    background-position: 10% 80%; /* Ajusta la posición horizontal y vertical */
+    background-repeat: no-repeat;
+  }
+  .parallax-section {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sect1Bg = document.querySelector(".sect1-bg") as any;
+    const parallaxSpeed = 0.1; // Ajusta este valor para cambiar la velocidad del efecto parallax
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      sect1Bg.style.backgroundPositionY = `${50 - scrollPosition * parallaxSpeed}%`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  });
+</script>

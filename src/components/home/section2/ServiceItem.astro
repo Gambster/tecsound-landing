@@ -1,0 +1,36 @@
+---
+interface ServiceItem {
+  title: string;
+  description: string;
+  align: "left" | "right" | "center";
+  image: string;
+  img_class?: string;
+  extra_class?: string;
+}
+
+const { title, description, align, image, img_class, extra_class } =
+  Astro.props as ServiceItem;
+
+const class_align = {
+  left: "text-left",
+  right: "text-right",
+  center: "text-center",
+};
+---
+
+<div class=`flex flex-col gap-y-4 ${extra_class}`>
+  <h3 class=`text-3xl font-bold ${class_align[align]}`>{title}</h3>
+  <p class="text-justify">{description}</p>
+  <img
+    src={image}
+    alt={title}
+    class=`w-full overflow-hidden rounded-md ${img_class}`
+  />
+</div>
+
+<style>
+  img {
+    height: 500px;
+    object-fit: cover;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+const services = [
+  {
+    title: "Acondicionamiento Acústico",
+    description:
+      "Diseño e implementación de soluciones para mejorar la calidad de sonido en espacios interiores, adaptando el entorno para optimizar la acústica y minimizar reverberaciones u otros problemas acústicos. ",
+    align: "left",
+    image: "/home-services-1.jpeg",
+  },
+  {
+    title: "Sonido Ambiental",
+    description:
+      "Instalación y calibración de sistemas de audio de alta calidad para negocios, casa habitación, auditorios, estudios de grabación y otros espacios que requieren un sonido impecable.",
+    align: "center",
+    image: "/home-services-2.jpeg",
+    extra_class: "mt-28",
+  },
+  {
+    title: "Control de Ruido y Vibraciones",
+    description:
+      "Identificación y reducción de fuentes de ruido no deseado en diferentes entornos, asegurando un ambiente más silencioso y confortable, así como solución de control de vibraciones.",
+    align: "right",
+    image: "/home-services-3.png",
+    img_class: "mt-8",
+  },
+];
+---
+
+<section>
+  <div
+    class="grid grid-cols-2 items-center container-our-services border-b-2 border-neutral-950"
+  >
+    <h2 class="text-4xl flex flex-col gap-y-6 font-bold col-span-1">
+      <span>Nuestros</span>
+      <span>Servicios</span>
+    </h2>
+    <p>
+      En TECSOUND buscamos brindarte la mejor calidad y atención, buscando
+      conseguir las condiciones adecuadas y el confort acústico para que puedas
+      desempeñar de forma óptima tus labores y se realicen tus proyectos de
+      forma adecuada.
+    </p>
+  </div>
+  <div class="container-services">
+    <div class="grid grid-cols-3 gap-x-14">
+      {services.map((service) => <ServiceItem {...service} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .container-our-services {
+    padding-bottom: 70px;
+  }
+  .container-services {
+    margin-top: 70px;
+  }
+</style>
